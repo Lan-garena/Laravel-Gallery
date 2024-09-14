@@ -1,6 +1,7 @@
-button.mybutton {
+a.mylink {
     width: 100%;
     margin: 5px 0;
+    display: block !important;
 }
 
 div.gallery-item {
@@ -11,3 +12,4 @@ div.gallery-item {
     display: block;
     margin: 0 auto;
 }
+
