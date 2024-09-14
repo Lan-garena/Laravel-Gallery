@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/about', function () {
@@ -22,6 +23,6 @@ Route::get('/edit', function () {
     return view('edit');
 });
 
-Route::post('/bla', function () {
-    return view('create');
+Route::post('/store', function (Request $request) {
+    dd($request->all());
 });
