@@ -8,7 +8,11 @@ Route::get('/about', function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    $images = DB::table('images')
+        ->select('*')
+        ->get();
+    $MyImages = $images->pluck('image')->all();
+    return view('welcome',['ImagesInView'=>$MyImages]);
 });
 
 Route::get('/create', function () {
@@ -24,5 +28,12 @@ Route::get('/edit', function () {
 });
 
 Route::post('/store', function (Request $request) {
-    dd($request->all());
+    $image = $request->file('image');
+    $filename = $request->image->store('uploads');
+
+    DB::table('images')->insert([
+        'image' => $filename
+    ]);
+
+    return redirect('/');
 });
