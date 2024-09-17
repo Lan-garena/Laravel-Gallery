@@ -7,10 +7,10 @@
             @foreach($ImagesInView as $image)
             <div class="col-md-3 gallery-item">
                 <div>
-                    <img src="{{$image}}" alt="" class="img-thumbnail gallery-image">
-                    <a href="#" class="btn btn-danger mylink">Delete</a>
-                    <a href="/edit" class="btn btn-warning mylink">Edit</a>
-                    <a href="/show" class="btn btn-info mylink">Show</a>
+                    <img src="/{{$image->image}}" alt="" class="img-thumbnail gallery-image">
+                    <a href="/delete/{{$image->id}}" class="btn btn-danger mylink">Delete</a>
+                    <a href="/edit/{{$image->id}}" class="btn btn-warning mylink">Edit</a>
+                    <a href="/show/{{$image->id}}" class="btn btn-info mylink">Show</a>
                 </div>
             </div>
             @endforeach

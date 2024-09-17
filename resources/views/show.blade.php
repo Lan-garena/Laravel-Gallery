@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <img src="/image.png" alt="" class="img-thumbnail gallery-image">
+                <img src="/{{$ImageInView}}" alt="" class="img-thumbnail gallery-image">
             </div>
         </div>
     </div>
