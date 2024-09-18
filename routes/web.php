@@ -59,7 +59,10 @@ Route::post('/update/{id}', function (Request $request, $id) {
     return redirect('/');
 });
 
-Route::get('/delete/{id}', function (Request $request, $id) {
+Route::get('/delete/{id}', function ($id) {
     $image = DB::table('images')->select('*')->where('id',$id)->first();
-    return view('delete',['ImageInView'=>$image]);
+    Storage::delete($image->image);
+
+    DB::table('images')->select('*')->where('id',$id)->delete();
+    return redirect('/');
 });
