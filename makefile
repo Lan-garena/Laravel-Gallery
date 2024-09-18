@@ -15,10 +15,3 @@ npm-build:
 
 tinker:
 	docker compose exec -u 0 php-cli php artisan tinker
-
-push:
-	git push -u origin main
-
-add:
-	git add .
-
